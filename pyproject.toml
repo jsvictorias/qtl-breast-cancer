@@ -1,7 +1,7 @@
 [project]
 name = "qtl-breast-cancer"
 version = "0.1.0"
-description = "Quntum Transfer Learning for Breast Cancer UCG"
+description = "Quantum Transfer Learning for Breast Cancer UCG"
 readme = "README.md"
 authors = [{ name = "Júlia Santos", email = "juliasantos7652@gmail.com" }]
 requires-python = ">=3.13"
@@ -9,15 +9,19 @@ dependencies = [
     "matplotlib>=3.10.9",
     "numpy>=2.4.6",
     "pandas>=3.0.3",
-    "qiskit>=2.4.1",
-    "scikit-learn>=1.8.0",
+    "pre-commit>=4.6.0",
+    "tensorflow>=2.21.0",
     "torch>=2.12.0",
+    "torchmetrics>=1.9.0",
     "torchvision>=0.27.0",
+    "tqdm>=4.67.3",
 ]
-
 [build-system]
 requires = ["uv_build>=0.9.22,<0.10.0"]
 build-backend = "uv_build"
+
+[tool.uv]
+package = false
 
 [dependency-groups]
 dev = [

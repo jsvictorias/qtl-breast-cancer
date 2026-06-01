@@ -1,0 +1,33 @@
+name: Homolog Tests
+
+on:
+  push:
+    branches:
+      - homolog
+
+jobs:
+  test-cluster:
+    runs-on: self-hosted
+    environment: homolog
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version-file: ".python-version"
+
+      - name: Install Dependencies
+        run: uv sync --frozen
+
+      - name: Run Pre-Commit
+        uses: pre-commit/action@v3.0.1
+
+      - name: Run Tests (cluster datasets)
+        run: uv run pytest tests/ -v
+        env:
+          DATASET_DIR: ${{ secrets.DATASET_DIR }}
+          ENV_VAR_X:   ${{ secrets.ENV_VAR_X }}

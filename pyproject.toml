@@ -1,0 +1,9 @@
+[project]
+name = "qtl-breast-cancer"
+version = "0.1.0"
+description = "Quntum Transfer Learning for Breast Cancer UCG"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "qiskit>=2.4.1",
+]

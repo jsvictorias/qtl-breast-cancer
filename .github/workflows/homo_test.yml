@@ -3,12 +3,12 @@ name: Homolog Tests
 on:
   push:
     branches:
-      - homolog
+      - homo
 
 jobs:
   test-cluster:
     runs-on: self-hosted
-    environment: homolog
+    environment: cluster
 
     steps:
       - name: Checkout
@@ -24,10 +24,10 @@ jobs:
         run: uv sync --frozen
 
       - name: Run Pre-Commit
-        uses: pre-commit/action@v3.0.1
+        run: uv run pre-commit run --all-files
 
       - name: Run Tests (cluster datasets)
         run: uv run pytest tests/ -v
         env:
-          DATASET_DIR: ${{ secrets.DATASET_DIR }}
+          DATASET_DIR: ${{ vars.DATASET_DIR }}
           ENV_VAR_X:   ${{ secrets.ENV_VAR_X }}

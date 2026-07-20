@@ -1,0 +1,11 @@
+dataset:
+  name: big-dataset
+  manifest_path: src/data/processed/big-dataset/manifest.json
+  batch_size: 32
+  num_workers: 0
+  pin_memory: true
+  augmentation: true
+
+output:
+  base_dir: src/output/classical/lenet/big-dataset
+  run_name: null

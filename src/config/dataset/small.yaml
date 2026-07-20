@@ -1,0 +1,11 @@
+dataset:
+  name: small-dataset
+  manifest_path: src/data/processed/small-dataset/manifest.json
+  batch_size: 16
+  num_workers: 0
+  pin_memory: true
+  augmentation: true
+
+output:
+  base_dir: src/output/classical/lenet/small-dataset
+  run_name: null

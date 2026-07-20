@@ -1,0 +1,20 @@
+model:
+  name: lenet
+  conv1_channels: 6
+  conv2_channels: 16
+  fc1_units: 120
+  fc2_units: 84
+  dropout: 0.20
+
+training:
+  seed: 42
+  device: auto
+  epochs: 30
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  use_class_weights: true
+  scheduler_factor: 0.5
+  scheduler_patience: 3
+  minimum_learning_rate: 0.000001
+  early_stopping_patience: 7
+  early_stopping_min_delta: 0.0001

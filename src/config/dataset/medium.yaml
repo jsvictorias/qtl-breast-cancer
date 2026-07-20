@@ -1,0 +1,11 @@
+dataset:
+  name: medium-dataset
+  manifest_path: src/data/processed/medium-dataset/manifest.json
+  batch_size: 32
+  num_workers: 0
+  pin_memory: true
+  augmentation: true
+
+output:
+  base_dir: src/output/classical/lenet/medium-dataset
+  run_name: null

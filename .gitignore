@@ -10,4 +10,4 @@ wheels/
 .venv
 .env
 
-**/ultrasound_breast_classification/
+src/data/raw/small-dataset/img/*

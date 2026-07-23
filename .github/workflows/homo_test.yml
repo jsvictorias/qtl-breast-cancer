@@ -18,7 +18,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
         with:
           enable-cache: true
-          python-version-file: ".python-version"
+          python-version-file: "3.12"
 
       - name: Install Dependencies
         run: uv sync --frozen
@@ -27,7 +27,7 @@ jobs:
         run: uv run pre-commit run --all-files
 
       - name: Run Tests (cluster datasets)
-        run: uv run pytest tests/ -v
+        run: uv run pytest -v
         env:
           DATASET_DIR: ${{ vars.DATASET_DIR }}
           ENV_VAR_X:   ${{ secrets.ENV_VAR_X }}

@@ -15,34 +15,11 @@ from PIL import Image, UnidentifiedImageError
 DATASET_ID = "medium-dataset"
 RAW_DIRECTORY_NAME = "medium-dataset-780"
 
-IMAGE_EXTENSIONS = {
-    ".png",
-    ".jpg",
-    ".jpeg",
-    ".bmp",
-    ".tif",
-    ".tiff",
-}
-
 CLASS_TO_INDEX = {
     "benign": 0,
     "malignant": 1,
 }
 
-CLASS_ALIASES = {
-    "benign": "benign",
-    "bening": "benign",
-    "benigno": "benign",
-    "malignant": "malignant",
-    "malign": "malignant",
-    "maligno": "malignant",
-    "normal": "normal",
-}
-
-# Reconhece nomes como:
-# benign (1)_mask.png
-# benign (1)_mask_1.png
-# benign (1)_mask_2.png
 MASK_SUFFIX_PATTERN = re.compile(
     r"_mask(?:_\d+)?$",
     flags=re.IGNORECASE,
@@ -57,25 +34,6 @@ def find_project_root(current_file: Path) -> Path:
         if (parent / "src" / "data").is_dir():
             return parent
 
-    raise RuntimeError(
-        "Não foi possível localizar a raiz do projeto. "
-        "A estrutura esperada contém src/data."
-    )
-
-
-def normalize_class_name(directory_name: str) -> str:
-    """Converte o nome físico da pasta para o padrão do projeto."""
-    normalized = directory_name.strip().lower()
-
-    if normalized not in CLASS_ALIASES:
-        raise ValueError(
-            f"Pasta de classe desconhecida: {directory_name!r}. "
-            "Esperado benign/bening, malignant/malign ou normal."
-        )
-
-    return CLASS_ALIASES[normalized]
-
-
 def natural_sort_key(value: str) -> list[Any]:
     """Ordena nomes com números de forma natural."""
     return [
@@ -85,17 +43,11 @@ def natural_sort_key(value: str) -> list[Any]:
 
 
 def is_image_file(path: Path) -> bool:
-    return path.is_file() and path.suffix.lower() in IMAGE_EXTENSIONS
+    return path.is_file() and path.suffix.lower()
 
 
 def is_mask_file(path: Path) -> bool:
     return bool(MASK_SUFFIX_PATTERN.search(path.stem))
-
-
-def mask_base_stem(path: Path) -> str:
-    """Remove _mask, _mask_1, _mask_2 etc. do nome da máscara."""
-    return MASK_SUFFIX_PATTERN.sub("", path.stem)
-
 
 def create_case_id(label: str, image_path: Path) -> str:
     """Cria um identificador legível para o caso."""

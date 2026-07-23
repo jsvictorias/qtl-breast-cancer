@@ -53,7 +53,7 @@ COLUMN_NAMES = {
 
 
 def json_safe(value: Any) -> Any:
-    """Converte valores do pandas/NumPy para tipos serializáveis em JSON."""
+    """Converte valores do pandas para tipos serializáveis em JSON."""
     if pd.isna(value):
         return None
 
@@ -61,26 +61,6 @@ def json_safe(value: Any) -> Any:
         return value.item()
 
     return value
-
-
-def normalize_label(value: Any) -> str:
-    """Normaliza a classe original sem descartar a classe normal."""
-    label = str(value).strip().lower()
-
-    aliases = {
-        "benign": "benign",
-        "benigno": "benign",
-        "malignant": "malignant",
-        "malign": "malignant",
-        "maligno": "malignant",
-        "normal": "normal",
-    }
-
-    if label not in aliases:
-        raise ValueError(f"Classe desconhecida no XLSX: {value!r}")
-
-    return aliases[label]
-
 
 def create_sample_id(
     case_id: str,
@@ -110,29 +90,11 @@ def build_interim_manifest(
     images_directory = dataset_root / "img"
     metadata_path = dataset_root / "breast-usg.xlsx"
 
-    if not dataset_root.is_dir():
-        raise FileNotFoundError(f"Diretório do dataset não encontrado: {dataset_root}")
-
-    if not images_directory.is_dir():
-        raise FileNotFoundError(
-            f"Diretório de imagens não encontrado: {images_directory}"
-        )
-
-    if not metadata_path.is_file():
-        raise FileNotFoundError(f"Arquivo de metadados não encontrado: {metadata_path}")
-
     dataframe = pd.read_excel(
         metadata_path,
         sheet_name=WORKSHEET,
         engine="openpyxl",
     )
-
-    missing_columns = REQUIRED_COLUMNS.difference(dataframe.columns)
-
-    if missing_columns:
-        raise ValueError(
-            f"Colunas obrigatórias ausentes no XLSX: {sorted(missing_columns)}"
-        )
 
     dataframe = dataframe.rename(columns=COLUMN_NAMES)
 

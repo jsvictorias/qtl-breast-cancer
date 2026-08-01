@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 import pandas as pd
 from dotenv import load_dotenv
+import re
 
 DATASET_CONFIGURE = {
     "small_dataset": {
@@ -34,6 +35,25 @@ COLUMN_MAP = {
     "Mask_other_filename": "mask_other_filename",
     "Classification": "classification",
 }
+B_FILENAME_PATTERN = re.compile(
+    r"^(?P<cls>benign|malignant)\s*\((?P<base_id>\d+)\)(?:-(?P<aug_chain>.+))?\.png$"
+)
+
+
+def b_pattern_filenames(filename: str) -> dict[str, Any] | None:
+    match = B_FILENAME_PATTERN.match(filename)
+    if not match:
+        return None
+
+    aug_chain_raw = match.group("aug_chain")
+    augmentations = aug_chain_raw.split("-") if aug_chain_raw else []
+
+    return {
+        "class_from_filename": match.group("cls").lower(),
+        "base_id": int(match.group("base_id")),
+        "augmentations": augmentations,
+        "is_original": len(augmentations) == 0,
+    }
 
 
 def buid_interim_manifest(
@@ -96,9 +116,9 @@ def buid_interim_manifest(
     m_samples: list[dict[str, Any]] = []
     m_classes: Counter[str] = Counter()
 
-    for label_m, class_dir in class_dirs.items():
+    for label_m, class_dirs in class_dirs.items():
         label_id_m = CLASS_TO_INDEX[label_m]
-        img_files = sorted(f for f in class_dir.iterdir() if f.is_file())
+        img_files = sorted(f for f in class_dirs.iterdir() if f.is_file())
         for case, img_path in enumerate(img_files, start=1):
             m_classes[label_m] += 1
             m_samples.append(
@@ -114,7 +134,7 @@ def buid_interim_manifest(
                 "dataset_id": DATASET_CONFIGURE["medium_dataset"]["id"],
                 "dataset_stage": "interim",
                 "src": {
-                    "dataset_root_relative_path": ("src/data/raw/medium-dataset"),
+                    "dataset_root_relative_path": ("src/data/raw/medium-dataset-780"),
                     "worksheet": DATASET_CONFIGURE["medium_dataset"]["worksheet"],
                 },
                 "total_cases": len(m_samples),
@@ -140,6 +160,44 @@ def buid_interim_manifest(
 
     b_samples: list[dict[str, Any]] = []
     b_classes: Counter[str] = Counter()
+    b_no_pattern: list[str] = []
+
+    for split, classes in b_class_dirs.items():
+        for label, class_dir in classes.items():
+            for case, img_path in enumerate(sorted(class_dir.glob("*.png")), start=1):
+                patterned = b_pattern_filenames(img_path.name)
+                if patterned is None:
+                    b_no_pattern.append(str(img_path))
+                    continue
+                b_samples.append(
+                    {
+                        "sample_id": f"{DATASET_CONFIGURE['big_dataset']['id']}-{case:04d}",
+                        "filepath": str(img_path),
+                        "filename": img_path.name,
+                        "split": split,
+                        "label": label,
+                        "augmentations": patterned["augmentations"],
+                        "is_original": patterned["is_original"],
+                    }
+                )
+                manifest = {
+                    "dataset_id": DATASET_CONFIGURE["big_dataset"]["id"],
+                    "dataset_stage": "interim",
+                    "src": {
+                        "dataset_root_relative_path": (
+                            "src/data/raw/big-dataset-9.248"
+                        ),
+                        "worksheet": DATASET_CONFIGURE["big_dataset"]["worksheet"],
+                    },
+                    "total_cases": len(b_samples),
+                    "samples": b_samples,
+                    "no_pattern": b_no_pattern,
+                }
+
+                b_output_root.parent.mkdir(parents=True, exist_ok=True)
+
+                with b_output_root.open("w", encoding="utf-8") as file:
+                    json.dump(manifest, file, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
@@ -162,4 +220,19 @@ if __name__ == "__main__":
     )
     m_output_path = project_root / "src" / "data" / "interim" / "manifest_medium.json"
 
-    # buid_interim_manifest(s_dataset_root, s_output_path, m_dataset_root, m_output_path)
+    b_root_from_env = os.getenv("BIG_ROOT_DATASET")
+    b_dataset_root = (
+        Path(b_root_from_env)
+        if b_root_from_env
+        else project_root / "src" / "data" / "raw" / "big-dataset-9.248"
+    )
+    b_output_path = project_root / "src" / "data" / "interim" / "manifest_big.json"
+
+    buid_interim_manifest(
+        s_dataset_root,
+        s_output_path,
+        m_dataset_root,
+        m_output_path,
+        b_dataset_root,
+        b_output_path,
+    )

@@ -2,7 +2,7 @@
   "dataset_id": "medium-dataset",
   "dataset_stage": "interim",
   "src": {
-    "dataset_root_relative_path": "src/data/raw/medium-dataset",
+    "dataset_root_relative_path": "src/data/raw/medium-dataset-780",
     "worksheet": "medium-dataset-780"
   },
   "total_cases": 1285,

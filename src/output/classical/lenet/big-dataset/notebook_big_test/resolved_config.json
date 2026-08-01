@@ -1,0 +1,66 @@
+{
+  "model": {
+    "name": "lenet",
+    "conv1_channels": 6,
+    "conv2_channels": 16,
+    "fc1_units": 120,
+    "fc2_units": 84,
+    "dropout": 0.2
+  },
+  "training": {
+    "seed": 42,
+    "device": "auto",
+    "epochs": 3,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "use_class_weights": true,
+    "scheduler_factor": 0.5,
+    "scheduler_patience": 3,
+    "minimum_learning_rate": 1e-06,
+    "early_stopping_patience": 7,
+    "early_stopping_min_delta": 0.0001
+  },
+  "dataset": {
+    "name": "big-dataset",
+    "manifest_path": "src/data/processed/big-dataset/manifest.json",
+    "batch_size": 8,
+    "num_workers": 0,
+    "pin_memory": true,
+    "augmentation": true
+  },
+  "output": {
+    "base_dir": "src/output/classical/lenet/big-dataset",
+    "run_name": "notebook_big_test"
+  },
+  "resolved": {
+    "project_root": "C:\\Users\\julia\\Documents\\projects\\IC-F\\qtl-breast-cancer",
+    "manifest_path": "C:\\Users\\julia\\Documents\\projects\\IC-F\\qtl-breast-cancer\\src\\data\\processed\\big-dataset\\manifest.json",
+    "dataset_root": "C:\\Users\\julia\\Documents\\projects\\IC-F\\qtl-breast-cancer\\src\\data\\raw\\big-dataset-9.248",
+    "dataset_id": "big-dataset",
+    "device": "cpu",
+    "image_size": [
+      32,
+      32
+    ],
+    "in_channels": 1,
+    "num_classes": 2,
+    "class_to_index": {
+      "benign": 0,
+      "malignant": 1
+    },
+    "split_counts": {
+      "train": {
+        "benign": 3128,
+        "malignant": 3018
+      },
+      "val": {
+        "benign": 670,
+        "malignant": 647
+      },
+      "test": {
+        "benign": 670,
+        "malignant": 647
+      }
+    }
+  }
+}

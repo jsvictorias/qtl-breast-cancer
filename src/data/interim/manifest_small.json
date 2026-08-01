@@ -1,0 +1,1547 @@
+{
+  "dataset_id": "small-dataset",
+  "dataset_stage": "interim",
+  "src": {
+    "dataset_root_relative_path": "src/data/raw/small-dataset",
+    "worksheet": "breast-usg.xlsx"
+  },
+  "total_cases": 256,
+  "samples": [
+    {
+      "sample_id": "small-dataset-0001",
+      "case_id": "case0001",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0002",
+      "case_id": "case0002",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0003",
+      "case_id": "case0003",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0004",
+      "case_id": "case0004",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0005",
+      "case_id": "case0005",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0006",
+      "case_id": "case0006",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0007",
+      "case_id": "case0007",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0008",
+      "case_id": "case0008",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0009",
+      "case_id": "case0009",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0010",
+      "case_id": "case0010",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0011",
+      "case_id": "case0011",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0012",
+      "case_id": "case0012",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0013",
+      "case_id": "case0013",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0014",
+      "case_id": "case0014",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0015",
+      "case_id": "case0015",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0016",
+      "case_id": "case0016",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0017",
+      "case_id": "case0017",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0018",
+      "case_id": "case0018",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0019",
+      "case_id": "case0019",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0020",
+      "case_id": "case0020",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0021",
+      "case_id": "case0021",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0022",
+      "case_id": "case0022",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0023",
+      "case_id": "case0023",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0024",
+      "case_id": "case0024",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0025",
+      "case_id": "case0025",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0026",
+      "case_id": "case0026",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0027",
+      "case_id": "case0027",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0028",
+      "case_id": "case0028",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0029",
+      "case_id": "case0029",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0030",
+      "case_id": "case0030",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0031",
+      "case_id": "case0031",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0032",
+      "case_id": "case0032",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0033",
+      "case_id": "case0033",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0034",
+      "case_id": "case0034",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0035",
+      "case_id": "case0035",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0036",
+      "case_id": "case0036",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0037",
+      "case_id": "case0037",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0038",
+      "case_id": "case0038",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0039",
+      "case_id": "case0039",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0040",
+      "case_id": "case0040",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0041",
+      "case_id": "case0041",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0042",
+      "case_id": "case0042",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0043",
+      "case_id": "case0043",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0044",
+      "case_id": "case0044",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0045",
+      "case_id": "case0045",
+      "label_id": null,
+      "label": "normal"
+    },
+    {
+      "sample_id": "small-dataset-0046",
+      "case_id": "case0046",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0047",
+      "case_id": "case0047",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0048",
+      "case_id": "case0048",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0049",
+      "case_id": "case0049",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0050",
+      "case_id": "case0050",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0051",
+      "case_id": "case0051",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0052",
+      "case_id": "case0052",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0053",
+      "case_id": "case0053",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0054",
+      "case_id": "case0054",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0055",
+      "case_id": "case0055",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0056",
+      "case_id": "case0056",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0057",
+      "case_id": "case0057",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0058",
+      "case_id": "case0058",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0059",
+      "case_id": "case0059",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0060",
+      "case_id": "case0060",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0061",
+      "case_id": "case0061",
+      "label_id": null,
+      "label": "normal"
+    },
+    {
+      "sample_id": "small-dataset-0062",
+      "case_id": "case0062",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0063",
+      "case_id": "case0063",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0064",
+      "case_id": "case0064",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0065",
+      "case_id": "case0065",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0066",
+      "case_id": "case0066",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0067",
+      "case_id": "case0067",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0068",
+      "case_id": "case0068",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0069",
+      "case_id": "case0069",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0070",
+      "case_id": "case0070",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0071",
+      "case_id": "case0071",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0072",
+      "case_id": "case0072",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0073",
+      "case_id": "case0073",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0074",
+      "case_id": "case0074",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0075",
+      "case_id": "case0075",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0076",
+      "case_id": "case0076",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0077",
+      "case_id": "case0077",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0078",
+      "case_id": "case0078",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0079",
+      "case_id": "case0079",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0080",
+      "case_id": "case0080",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0081",
+      "case_id": "case0081",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0082",
+      "case_id": "case0082",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0083",
+      "case_id": "case0083",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0084",
+      "case_id": "case0084",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0085",
+      "case_id": "case0085",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0086",
+      "case_id": "case0086",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0087",
+      "case_id": "case0087",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0088",
+      "case_id": "case0088",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0089",
+      "case_id": "case0089",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0090",
+      "case_id": "case0090",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0091",
+      "case_id": "case0091",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0092",
+      "case_id": "case0092",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0093",
+      "case_id": "case0093",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0094",
+      "case_id": "case0094",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0095",
+      "case_id": "case0095",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0096",
+      "case_id": "case0096",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0097",
+      "case_id": "case0097",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0098",
+      "case_id": "case0098",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0099",
+      "case_id": "case0099",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0100",
+      "case_id": "case0100",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0101",
+      "case_id": "case0101",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0102",
+      "case_id": "case0102",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0103",
+      "case_id": "case0103",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0104",
+      "case_id": "case0104",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0105",
+      "case_id": "case0105",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0106",
+      "case_id": "case0106",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0107",
+      "case_id": "case0107",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0108",
+      "case_id": "case0108",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0109",
+      "case_id": "case0109",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0110",
+      "case_id": "case0110",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0111",
+      "case_id": "case0111",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0112",
+      "case_id": "case0112",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0113",
+      "case_id": "case0113",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0114",
+      "case_id": "case0114",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0115",
+      "case_id": "case0115",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0116",
+      "case_id": "case0116",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0117",
+      "case_id": "case0117",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0118",
+      "case_id": "case0118",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0119",
+      "case_id": "case0119",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0120",
+      "case_id": "case0120",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0121",
+      "case_id": "case0121",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0122",
+      "case_id": "case0122",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0123",
+      "case_id": "case0123",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0124",
+      "case_id": "case0124",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0125",
+      "case_id": "case0125",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0126",
+      "case_id": "case0126",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0127",
+      "case_id": "case0127",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0128",
+      "case_id": "case0128",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0129",
+      "case_id": "case0129",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0130",
+      "case_id": "case0130",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0131",
+      "case_id": "case0131",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0132",
+      "case_id": "case0132",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0133",
+      "case_id": "case0133",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0134",
+      "case_id": "case0134",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0135",
+      "case_id": "case0135",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0136",
+      "case_id": "case0136",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0137",
+      "case_id": "case0137",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0138",
+      "case_id": "case0138",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0139",
+      "case_id": "case0139",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0140",
+      "case_id": "case0140",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0141",
+      "case_id": "case0141",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0142",
+      "case_id": "case0142",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0143",
+      "case_id": "case0143",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0144",
+      "case_id": "case0144",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0145",
+      "case_id": "case0145",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0146",
+      "case_id": "case0146",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0147",
+      "case_id": "case0147",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0148",
+      "case_id": "case0148",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0149",
+      "case_id": "case0149",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0150",
+      "case_id": "case0150",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0151",
+      "case_id": "case0151",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0152",
+      "case_id": "case0152",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0153",
+      "case_id": "case0153",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0154",
+      "case_id": "case0154",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0155",
+      "case_id": "case0155",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0156",
+      "case_id": "case0156",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0157",
+      "case_id": "case0157",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0158",
+      "case_id": "case0158",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0159",
+      "case_id": "case0159",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0160",
+      "case_id": "case0160",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0161",
+      "case_id": "case0161",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0162",
+      "case_id": "case0162",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0163",
+      "case_id": "case0163",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0164",
+      "case_id": "case0164",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0165",
+      "case_id": "case0165",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0166",
+      "case_id": "case0166",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0167",
+      "case_id": "case0167",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0168",
+      "case_id": "case0168",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0169",
+      "case_id": "case0169",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0170",
+      "case_id": "case0170",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0171",
+      "case_id": "case0171",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0172",
+      "case_id": "case0172",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0173",
+      "case_id": "case0173",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0174",
+      "case_id": "case0174",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0175",
+      "case_id": "case0175",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0176",
+      "case_id": "case0176",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0177",
+      "case_id": "case0177",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0178",
+      "case_id": "case0178",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0179",
+      "case_id": "case0179",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0180",
+      "case_id": "case0180",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0181",
+      "case_id": "case0181",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0182",
+      "case_id": "case0182",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0183",
+      "case_id": "case0183",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0184",
+      "case_id": "case0184",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0185",
+      "case_id": "case0185",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0186",
+      "case_id": "case0186",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0187",
+      "case_id": "case0187",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0188",
+      "case_id": "case0188",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0189",
+      "case_id": "case0189",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0190",
+      "case_id": "case0190",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0191",
+      "case_id": "case0191",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0192",
+      "case_id": "case0192",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0193",
+      "case_id": "case0193",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0194",
+      "case_id": "case0194",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0195",
+      "case_id": "case0195",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0196",
+      "case_id": "case0196",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0197",
+      "case_id": "case0197",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0198",
+      "case_id": "case0198",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0199",
+      "case_id": "case0199",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0200",
+      "case_id": "case0200",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0201",
+      "case_id": "case0201",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0202",
+      "case_id": "case0202",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0203",
+      "case_id": "case0203",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0204",
+      "case_id": "case0204",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0205",
+      "case_id": "case0205",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0206",
+      "case_id": "case0206",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0207",
+      "case_id": "case0207",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0208",
+      "case_id": "case0208",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0209",
+      "case_id": "case0209",
+      "label_id": null,
+      "label": "normal"
+    },
+    {
+      "sample_id": "small-dataset-0210",
+      "case_id": "case0210",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0211",
+      "case_id": "case0211",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0212",
+      "case_id": "case0212",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0213",
+      "case_id": "case0213",
+      "label_id": null,
+      "label": "normal"
+    },
+    {
+      "sample_id": "small-dataset-0214",
+      "case_id": "case0214",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0215",
+      "case_id": "case0215",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0216",
+      "case_id": "case0216",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0217",
+      "case_id": "case0217",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0218",
+      "case_id": "case0218",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0219",
+      "case_id": "case0219",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0220",
+      "case_id": "case0220",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0221",
+      "case_id": "case0221",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0222",
+      "case_id": "case0222",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0223",
+      "case_id": "case0223",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0224",
+      "case_id": "case0224",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0225",
+      "case_id": "case0225",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0226",
+      "case_id": "case0226",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0227",
+      "case_id": "case0227",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0228",
+      "case_id": "case0228",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0229",
+      "case_id": "case0229",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0230",
+      "case_id": "case0230",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0231",
+      "case_id": "case0231",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0232",
+      "case_id": "case0232",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0233",
+      "case_id": "case0233",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0234",
+      "case_id": "case0234",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0235",
+      "case_id": "case0235",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0236",
+      "case_id": "case0236",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0237",
+      "case_id": "case0237",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0238",
+      "case_id": "case0238",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0239",
+      "case_id": "case0239",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0240",
+      "case_id": "case0240",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0241",
+      "case_id": "case0241",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0242",
+      "case_id": "case0242",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0243",
+      "case_id": "case0243",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0244",
+      "case_id": "case0244",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0245",
+      "case_id": "case0245",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0246",
+      "case_id": "case0246",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0247",
+      "case_id": "case0247",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0248",
+      "case_id": "case0248",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0249",
+      "case_id": "case0249",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0250",
+      "case_id": "case0250",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0251",
+      "case_id": "case0251",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0252",
+      "case_id": "case0252",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0253",
+      "case_id": "case0253",
+      "label_id": 0,
+      "label": "benign"
+    },
+    {
+      "sample_id": "small-dataset-0254",
+      "case_id": "case0254",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0255",
+      "case_id": "case0255",
+      "label_id": 1,
+      "label": "malignant"
+    },
+    {
+      "sample_id": "small-dataset-0256",
+      "case_id": "case0256",
+      "label_id": 0,
+      "label": "benign"
+    }
+  ]
+}

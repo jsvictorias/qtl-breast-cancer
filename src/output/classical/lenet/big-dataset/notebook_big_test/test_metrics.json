@@ -1,0 +1,55 @@
+{
+  "accuracy": 0.768413059984814,
+  "macro_precision": 0.768907446646447,
+  "macro_recall": 0.7687536044660777,
+  "macro_f1": 0.7684045144644478,
+  "weighted_f1": 0.7683799460933953,
+  "total_samples": 1317,
+  "per_class": {
+    "benign": {
+      "index": 0,
+      "precision": 0.7856025039123631,
+      "recall": 0.7492537313432835,
+      "f1_score": 0.7669977081741788,
+      "support": 670,
+      "true_positive": 502,
+      "false_positive": 137,
+      "false_negative": 168
+    },
+    "malignant": {
+      "index": 1,
+      "precision": 0.7522123893805309,
+      "recall": 0.7882534775888718,
+      "f1_score": 0.7698113207547169,
+      "support": 647,
+      "true_positive": 510,
+      "false_positive": 168,
+      "false_negative": 137
+    }
+  },
+  "confusion_matrix": [
+    [
+      502,
+      168
+    ],
+    [
+      137,
+      510
+    ]
+  ],
+  "class_order": [
+    "benign",
+    "malignant"
+  ],
+  "dataset_id": "big-dataset",
+  "evaluation_split": "test",
+  "test_loss": 0.4662711039672046,
+  "best_epoch": 3,
+  "best_validation_loss": 0.4512637512830504,
+  "trainable_parameters": 61026,
+  "device": "cpu",
+  "class_weights": [
+    0.9824168682098389,
+    1.0182240009307861
+  ]
+}

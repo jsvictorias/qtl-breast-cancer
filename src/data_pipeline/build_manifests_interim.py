@@ -36,7 +36,7 @@ COLUMN_MAP = {
     "Classification": "classification",
 }
 B_FILENAME_PATTERN = re.compile(
-    r"^(?P<cls>benign|malignant)\s*\((?P<base_id>\d+)\)(?:-(?P<aug_chain>.+))?\.png$"
+    r"^(?P<cls>benign|malignant)\s*\((?P<base_id>\d+)\)(?:\s*-\s*(?P<aug_chain>.+))?\.png$"
 )
 
 
@@ -46,7 +46,11 @@ def b_pattern_filenames(filename: str) -> dict[str, Any] | None:
         return None
 
     aug_chain_raw = match.group("aug_chain")
-    augmentations = aug_chain_raw.split("-") if aug_chain_raw else []
+    augmentations = (
+        [tag.strip() for tag in aug_chain_raw.split("-") if tag.strip()]
+        if aug_chain_raw
+        else []
+    )
 
     return {
         "class_from_filename": match.group("cls").lower(),
@@ -83,12 +87,18 @@ def buid_interim_manifest(
 
         s_samples_copy.add(img_filename)
 
+        mask_tumor_filename = str(row["mask_tumor_filename"])
+        mask_other_filename = str(row["mask_other_filename"])
+
         s_samples.append(
             {
                 "sample_id": f"{DATASET_CONFIGURE['small_dataset']['id']}-{case:04d}",
                 "case_id": case_id,
                 "label_id": label_id,
                 "label": label,
+                "image_filename": img_filename,
+                "mask_tumor_filename": mask_tumor_filename,
+                "mask_other_filename": mask_other_filename,
             }
         )
 
@@ -115,15 +125,19 @@ def buid_interim_manifest(
     }
     m_samples: list[dict[str, Any]] = []
     m_classes: Counter[str] = Counter()
+    m_case_counter = 0
 
     for label_m, class_dirs in class_dirs.items():
         label_id_m = CLASS_TO_INDEX[label_m]
-        img_files = sorted(f for f in class_dirs.iterdir() if f.is_file())
-        for case, img_path in enumerate(img_files, start=1):
+        img_files = sorted(
+            f for f in class_dirs.iterdir() if f.is_file() and "_mask" not in f.stem
+        )
+        for img_path in img_files:
+            m_case_counter += 1
             m_classes[label_m] += 1
             m_samples.append(
                 {
-                    "sample_id": f"{DATASET_CONFIGURE['medium_dataset']['id']}-{case:04d}",
+                    "sample_id": f"{DATASET_CONFIGURE['medium_dataset']['id']}-{m_case_counter:04d}",
                     "label_id": label_id_m,
                     "label": label_m,
                     "image_filename": img_path.name,
@@ -159,20 +173,20 @@ def buid_interim_manifest(
     }
 
     b_samples: list[dict[str, Any]] = []
-    b_classes: Counter[str] = Counter()
     b_no_pattern: list[str] = []
+    b_case_counter = 0
 
     for split, classes in b_class_dirs.items():
         for label, class_dir in classes.items():
-            for case, img_path in enumerate(sorted(class_dir.glob("*.png")), start=1):
+            for img_path in sorted(class_dir.glob("*.png")):
                 patterned = b_pattern_filenames(img_path.name)
                 if patterned is None:
                     b_no_pattern.append(str(img_path))
                     continue
+                b_case_counter += 1
                 b_samples.append(
                     {
-                        "sample_id": f"{DATASET_CONFIGURE['big_dataset']['id']}-{case:04d}",
-                        "filepath": str(img_path),
+                        "sample_id": f"{DATASET_CONFIGURE['big_dataset']['id']}-{b_case_counter:04d}",
                         "filename": img_path.name,
                         "split": split,
                         "label": label,

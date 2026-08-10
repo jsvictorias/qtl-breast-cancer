@@ -37,17 +37,25 @@ from classical.utils.reproducibility import set_global_seed
 
 
 def find_project_root(start: str | Path | None = None) -> Path:
-    current = Path(start or Path.cwd()).resolve()
+    current = Path(start or Path(__file__)).resolve()
     candidates = [current, *current.parents]
     for candidate in candidates:
-        if (candidate / "pyproject.toml").is_file() and (
-            candidate / "src" / "data"
-        ).is_dir():
+        if (candidate / "pyproject.toml").is_file() and (candidate / "src").is_dir():
+            return candidate
+    # Fallback caso pyproject.toml não seja localizado no topo
+    for candidate in candidates:
+        if (candidate / "src").is_dir():
             return candidate
     raise RuntimeError(
         "Não foi possível localizar a raiz do projeto. "
-        "Execute dentro do repositório que contém pyproject.toml e src/data."
+        "Garanta que o script esteja dentro da estrutura da pasta do projeto."
     )
+
+
+PROJECT_ROOT = find_project_root()
+SRC_PATH = PROJECT_ROOT / "src"
+if str(SRC_PATH) not in sys.path:
+    sys.path.insert(0, str(SRC_PATH))
 
 
 def choose_device(requested: str) -> torch.device:
@@ -93,52 +101,70 @@ def _save_json(data: dict[str, Any], path: Path) -> None:
         json.dump(data, file, ensure_ascii=False, indent=2)
 
 
-def _build_overrides(
-    *,
-    epochs: int | None = None,
-    batch_size: int | None = None,
-    num_workers: int | None = None,
-    device: str | None = None,
-    augmentation: bool | None = None,
-    run_name: str | None = None,
-) -> dict[str, Any]:
-    overrides: dict[str, Any] = {}
-    if epochs is not None:
-        overrides.setdefault("training", {})["epochs"] = epochs
-    if device is not None:
-        overrides.setdefault("training", {})["device"] = device
-    if batch_size is not None:
-        overrides.setdefault("dataset", {})["batch_size"] = batch_size
-    if num_workers is not None:
-        overrides.setdefault("dataset", {})["num_workers"] = num_workers
-    if augmentation is not None:
-        overrides.setdefault("dataset", {})["augmentation"] = augmentation
-    if run_name is not None:
-        overrides.setdefault("output", {})["run_name"] = run_name
-    return overrides
+def get_default_config(project_root: Path) -> dict[str, Any]:
+    """Retorna a configuração padrão voltada para o Small Dataset."""
+    return {
+        "dataset": {
+            "manifest_path": "data/processed/manifest_processed.json",
+            "batch_size": 16,
+            "num_workers": 0,
+            "pin_memory": True,
+            "augmentation": True,
+        },
+        "model": {
+            "conv1_channels": 6,
+            "conv2_channels": 16,
+            "fc1_units": 120,
+            "fc2_units": 84,
+            "dropout": 0.0,
+        },
+        "training": {
+            "seed": 42,
+            "device": "auto",
+            "epochs": 30,
+            "learning_rate": 1e-3,
+            "weight_decay": 1e-4,
+            "use_class_weights": True,
+            "scheduler_factor": 0.5,
+            "scheduler_patience": 3,
+            "minimum_learning_rate": 1e-6,
+            "early_stopping_patience": 7,
+            "early_stopping_min_delta": 1e-4,
+        },
+        "output": {
+            "base_dir": "reports/outputs/small_dataset",
+            "run_name": None,
+        },
+    }
 
 
 def run_experiment(
     *,
-    dataset_config_path: str | Path,
-    model_config_path: str | Path,
+    dataset_config_path: str | Path | None = None,
+    model_config_path: str | Path | None = None,
     project_root: str | Path | None = None,
     overrides: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     project_root = find_project_root(project_root)
     load_dotenv(project_root / ".env")
 
-    dataset_config_path = Path(dataset_config_path)
-    model_config_path = Path(model_config_path)
-    if not dataset_config_path.is_absolute():
-        dataset_config_path = project_root / dataset_config_path
-    if not model_config_path.is_absolute():
-        model_config_path = project_root / model_config_path
+    configuration = get_default_config(project_root)
 
-    configuration = deep_update(
-        load_yaml(model_config_path),
-        load_yaml(dataset_config_path),
-    )
+    # Carrega arquivos de configuração YAML caso existam
+    if model_config_path:
+        m_path = Path(model_config_path)
+        if not m_path.is_absolute():
+            m_path = project_root / m_path
+        if m_path.is_file():
+            configuration = deep_update(configuration, load_yaml(m_path))
+
+    if dataset_config_path:
+        d_path = Path(dataset_config_path)
+        if not d_path.is_absolute():
+            d_path = project_root / d_path
+        if d_path.is_file():
+            configuration = deep_update(configuration, load_yaml(d_path))
+
     if overrides:
         configuration = deep_update(configuration, overrides)
 
@@ -150,8 +176,9 @@ def run_experiment(
     seed = int(training_config.get("seed", 42))
     set_global_seed(seed)
 
+    manifest_rel_path = dataset_config["manifest_path"]
     bundle = load_processed_manifest(
-        manifest_path=dataset_config["manifest_path"],
+        manifest_path=manifest_rel_path,
         project_root=project_root,
     )
 
@@ -242,11 +269,12 @@ def run_experiment(
     base_output_dir = Path(output_config["base_dir"])
     if not base_output_dir.is_absolute():
         base_output_dir = project_root / base_output_dir
+
     run_name = output_config.get("run_name") or datetime.now().strftime(
         "run_%Y%m%d_%H%M%S"
     )
     output_dir = (base_output_dir / str(run_name)).resolve()
-    output_dir.mkdir(parents=True, exist_ok=False)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     resolved_configuration = {
         **configuration,
@@ -267,14 +295,17 @@ def run_experiment(
     bundle.label_map.save(output_dir / "label_map.json")
 
     parameter_count = count_trainable_parameters(model)
-    print(f"Dataset: {bundle.dataset_id}")
-    print(f"Dataset root: {bundle.dataset_root}")
+    print("=" * 50)
+    print(f" Executando LeNet - Dataset: {bundle.dataset_id}")
+    print("=" * 50)
+    print(f"Raiz do Projeto: {project_root}")
+    print(f"Manifest: {bundle.manifest_path}")
     print(f"Classes: {bundle.label_map.to_dict()}")
-    print(f"Splits: {bundle.split_counts()}")
-    print(f"Entrada: {in_channels}x{image_size[0]}x{image_size[1]}")
-    print(f"Device: {device}")
-    print(f"Parâmetros treináveis: {parameter_count:,}")
-    print(f"Saída: {output_dir}")
+    print(f"Amostras (Splits): {bundle.split_counts()}")
+    print(f"Dimensão de Entrada: {in_channels}x{image_size[0]}x{image_size[1]}")
+    print(f"Dispositivo de Execução: {device}")
+    print(f"Parâmetros Treináveis: {parameter_count:,}")
+    print(f"Diretório de Saída: {output_dir}\n")
 
     checkpoint_metadata = {
         "dataset_id": bundle.dataset_id,
@@ -347,18 +378,22 @@ def run_experiment(
         path=output_dir / "test_predictions.csv",
     )
 
-    print("\nResultados no teste")
-    print(f"loss={test_loss:.4f}")
-    print(f"accuracy={metrics['accuracy']:.4f}")
-    print(f"macro_precision={metrics['macro_precision']:.4f}")
-    print(f"macro_recall={metrics['macro_recall']:.4f}")
-    print(f"macro_f1={metrics['macro_f1']:.4f}")
+    print("\n" + "-" * 40)
+    print(" RESULTADOS DA AVALIAÇÃO DE TESTE")
+    print("-" * 40)
+    print(f"Loss Teste       : {test_loss:.4f}")
+    print(f"Acurácia         : {metrics['accuracy']:.4f}")
+    print(f"Macro Precision  : {metrics['macro_precision']:.4f}")
+    print(f"Macro Recall     : {metrics['macro_recall']:.4f}")
+    print(f"Macro F1-Score   : {metrics['macro_f1']:.4f}")
+    print("\nDesempenho por Classe:")
     for class_name, values in metrics["per_class"].items():
         print(
-            f"  {class_name}: precision={values['precision']:.4f}, "
-            f"recall={values['recall']:.4f}, "
-            f"f1={values['f1_score']:.4f}, "
-            f"support={values['support']}"
+            f"  [{class_name}] "
+            f"Precision: {values['precision']:.4f} | "
+            f"Recall: {values['recall']:.4f} | "
+            f"F1: {values['f1_score']:.4f} | "
+            f"Suporte: {values['support']}"
         )
 
     return {
@@ -371,46 +406,47 @@ def run_experiment(
     }
 
 
-def run_cli(
-    *,
-    dataset_config_path: str | Path,
-    model_config_path: str | Path,
-    project_root: str | Path | None = None,
-) -> None:
-    parser = argparse.ArgumentParser(
-        description="Treina a LeNet usando um manifest.json processed."
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Executa o experimento da LeNet.")
+    parser.add_argument(
+        "--dataset-config",
+        type=str,
+        default="configs/dataset/small.yaml",
+        help="Caminho opcional do YAML do dataset.",
+    )
+    parser.add_argument(
+        "--model-config",
+        type=str,
+        default="configs/model/lenet.yaml",
+        help="Caminho opcional do YAML do modelo.",
     )
     parser.add_argument("--epochs", type=int)
     parser.add_argument("--batch-size", type=int)
     parser.add_argument("--num-workers", type=int)
-    parser.add_argument(
-        "--device",
-        choices=["auto", "cpu", "cuda", "mps"],
-    )
+    parser.add_argument("--device", choices=["auto", "cpu", "cuda", "mps"])
     parser.add_argument("--run-name")
-    parser.add_argument(
-        "--no-augmentation",
-        action="store_true",
-        help="Desativa RandomHorizontalFlip e RandomRotation no treino.",
-    )
-    arguments = parser.parse_args()
 
-    overrides = _build_overrides(
-        epochs=arguments.epochs,
-        batch_size=arguments.batch_size,
-        num_workers=arguments.num_workers,
-        device=arguments.device,
-        augmentation=False if arguments.no_augmentation else None,
-        run_name=arguments.run_name,
-    )
+    args = parser.parse_args()
+
+    overrides = {}
+    if args.epochs is not None:
+        overrides.setdefault("training", {})["epochs"] = args.epochs
+    if args.device is not None:
+        overrides.setdefault("training", {})["device"] = args.device
+    if args.batch_size is not None:
+        overrides.setdefault("dataset", {})["batch_size"] = args.batch_size
+    if args.num_workers is not None:
+        overrides.setdefault("dataset", {})["num_workers"] = args.num_workers
+    if args.run_name is not None:
+        overrides.setdefault("output", {})["run_name"] = args.run_name
 
     try:
         run_experiment(
-            dataset_config_path=dataset_config_path,
-            model_config_path=model_config_path,
-            project_root=project_root,
-            overrides=overrides,
+            dataset_config_path=args.dataset_config,
+            model_config_path=args.model_config,
+            project_root=PROJECT_ROOT,
+            overrides=overrides if overrides else None,
         )
     except Exception as error:
-        print(f"Erro durante o experimento: {error}", file=sys.stderr)
-        raise
+        print(f"\n[ERRO NA EXECUÇÃO]: {error}", file=sys.stderr)
+        sys.exit(1)

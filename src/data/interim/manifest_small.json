@@ -1,0 +1,2315 @@
+{
+  "dataset_id": "small-dataset",
+  "dataset_stage": "interim",
+  "src": {
+    "dataset_root_relative_path": "src/data/raw/small-dataset",
+    "worksheet": "breast-usg.xlsx"
+  },
+  "total_cases": 256,
+  "samples": [
+    {
+      "sample_id": "small-dataset-0001",
+      "case_id": "case0001",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case001.png",
+      "mask_tumor_filename": "case001_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0002",
+      "case_id": "case0002",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case002.png",
+      "mask_tumor_filename": "case002_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0003",
+      "case_id": "case0003",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case003.png",
+      "mask_tumor_filename": "case003_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0004",
+      "case_id": "case0004",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case004.png",
+      "mask_tumor_filename": "case004_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0005",
+      "case_id": "case0005",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case005.png",
+      "mask_tumor_filename": "case005_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0006",
+      "case_id": "case0006",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case006.png",
+      "mask_tumor_filename": "case006_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0007",
+      "case_id": "case0007",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case007.png",
+      "mask_tumor_filename": "case007_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0008",
+      "case_id": "case0008",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case008.png",
+      "mask_tumor_filename": "case008_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0009",
+      "case_id": "case0009",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case009.png",
+      "mask_tumor_filename": "case009_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0010",
+      "case_id": "case0010",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case010.png",
+      "mask_tumor_filename": "case010_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0011",
+      "case_id": "case0011",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case011.png",
+      "mask_tumor_filename": "case011_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0012",
+      "case_id": "case0012",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case012.png",
+      "mask_tumor_filename": "case012_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0013",
+      "case_id": "case0013",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case013.png",
+      "mask_tumor_filename": "case013_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0014",
+      "case_id": "case0014",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case014.png",
+      "mask_tumor_filename": "case014_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0015",
+      "case_id": "case0015",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case015.png",
+      "mask_tumor_filename": "case015_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0016",
+      "case_id": "case0016",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case016.png",
+      "mask_tumor_filename": "case016_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0017",
+      "case_id": "case0017",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case017.png",
+      "mask_tumor_filename": "case017_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0018",
+      "case_id": "case0018",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case018.png",
+      "mask_tumor_filename": "case018_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0019",
+      "case_id": "case0019",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case019.png",
+      "mask_tumor_filename": "case019_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0020",
+      "case_id": "case0020",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case020.png",
+      "mask_tumor_filename": "case020_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0021",
+      "case_id": "case0021",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case021.png",
+      "mask_tumor_filename": "case021_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0022",
+      "case_id": "case0022",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case022.png",
+      "mask_tumor_filename": "case022_tumor.png",
+      "mask_other_filename": "case022_other1.png&case022_other2.png"
+    },
+    {
+      "sample_id": "small-dataset-0023",
+      "case_id": "case0023",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case023.png",
+      "mask_tumor_filename": "case023_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0024",
+      "case_id": "case0024",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case024.png",
+      "mask_tumor_filename": "case024_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0025",
+      "case_id": "case0025",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case025.png",
+      "mask_tumor_filename": "case025_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0026",
+      "case_id": "case0026",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case026.png",
+      "mask_tumor_filename": "case026_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0027",
+      "case_id": "case0027",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case027.png",
+      "mask_tumor_filename": "case027_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0028",
+      "case_id": "case0028",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case028.png",
+      "mask_tumor_filename": "case028_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0029",
+      "case_id": "case0029",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case029.png",
+      "mask_tumor_filename": "case029_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0030",
+      "case_id": "case0030",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case030.png",
+      "mask_tumor_filename": "case030_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0031",
+      "case_id": "case0031",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case031.png",
+      "mask_tumor_filename": "case031_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0032",
+      "case_id": "case0032",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case032.png",
+      "mask_tumor_filename": "case032_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0033",
+      "case_id": "case0033",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case033.png",
+      "mask_tumor_filename": "case033_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0034",
+      "case_id": "case0034",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case034.png",
+      "mask_tumor_filename": "case034_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0035",
+      "case_id": "case0035",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case035.png",
+      "mask_tumor_filename": "case035_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0036",
+      "case_id": "case0036",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case036.png",
+      "mask_tumor_filename": "case036_tumor.png",
+      "mask_other_filename": "case036_other1.png&case036_other2.png"
+    },
+    {
+      "sample_id": "small-dataset-0037",
+      "case_id": "case0037",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case037.png",
+      "mask_tumor_filename": "case037_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0038",
+      "case_id": "case0038",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case038.png",
+      "mask_tumor_filename": "case038_tumor.png",
+      "mask_other_filename": "case038_other1.png"
+    },
+    {
+      "sample_id": "small-dataset-0039",
+      "case_id": "case0039",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case039.png",
+      "mask_tumor_filename": "case039_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0040",
+      "case_id": "case0040",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case040.png",
+      "mask_tumor_filename": "case040_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0041",
+      "case_id": "case0041",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case041.png",
+      "mask_tumor_filename": "case041_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0042",
+      "case_id": "case0042",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case042.png",
+      "mask_tumor_filename": "case042_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0043",
+      "case_id": "case0043",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case043.png",
+      "mask_tumor_filename": "case043_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0044",
+      "case_id": "case0044",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case044.png",
+      "mask_tumor_filename": "case044_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0045",
+      "case_id": "case0045",
+      "label_id": null,
+      "label": "normal",
+      "image_filename": "case045.png",
+      "mask_tumor_filename": "nan",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0046",
+      "case_id": "case0046",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case046.png",
+      "mask_tumor_filename": "case046_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0047",
+      "case_id": "case0047",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case047.png",
+      "mask_tumor_filename": "case047_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0048",
+      "case_id": "case0048",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case048.png",
+      "mask_tumor_filename": "case048_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0049",
+      "case_id": "case0049",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case049.png",
+      "mask_tumor_filename": "case049_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0050",
+      "case_id": "case0050",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case050.png",
+      "mask_tumor_filename": "case050_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0051",
+      "case_id": "case0051",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case051.png",
+      "mask_tumor_filename": "case051_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0052",
+      "case_id": "case0052",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case052.png",
+      "mask_tumor_filename": "case052_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0053",
+      "case_id": "case0053",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case053.png",
+      "mask_tumor_filename": "case053_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0054",
+      "case_id": "case0054",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case054.png",
+      "mask_tumor_filename": "case054_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0055",
+      "case_id": "case0055",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case055.png",
+      "mask_tumor_filename": "case055_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0056",
+      "case_id": "case0056",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case056.png",
+      "mask_tumor_filename": "case056_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0057",
+      "case_id": "case0057",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case057.png",
+      "mask_tumor_filename": "case057_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0058",
+      "case_id": "case0058",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case058.png",
+      "mask_tumor_filename": "case058_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0059",
+      "case_id": "case0059",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case059.png",
+      "mask_tumor_filename": "case059_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0060",
+      "case_id": "case0060",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case060.png",
+      "mask_tumor_filename": "case060_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0061",
+      "case_id": "case0061",
+      "label_id": null,
+      "label": "normal",
+      "image_filename": "case061.png",
+      "mask_tumor_filename": "nan",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0062",
+      "case_id": "case0062",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case062.png",
+      "mask_tumor_filename": "case062_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0063",
+      "case_id": "case0063",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case063.png",
+      "mask_tumor_filename": "case063_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0064",
+      "case_id": "case0064",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case064.png",
+      "mask_tumor_filename": "case064_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0065",
+      "case_id": "case0065",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case065.png",
+      "mask_tumor_filename": "case065_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0066",
+      "case_id": "case0066",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case066.png",
+      "mask_tumor_filename": "case066_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0067",
+      "case_id": "case0067",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case067.png",
+      "mask_tumor_filename": "case067_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0068",
+      "case_id": "case0068",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case068.png",
+      "mask_tumor_filename": "case068_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0069",
+      "case_id": "case0069",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case069.png",
+      "mask_tumor_filename": "case069_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0070",
+      "case_id": "case0070",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case070.png",
+      "mask_tumor_filename": "case070_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0071",
+      "case_id": "case0071",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case071.png",
+      "mask_tumor_filename": "case071_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0072",
+      "case_id": "case0072",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case072.png",
+      "mask_tumor_filename": "case072_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0073",
+      "case_id": "case0073",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case073.png",
+      "mask_tumor_filename": "case073_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0074",
+      "case_id": "case0074",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case074.png",
+      "mask_tumor_filename": "case074_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0075",
+      "case_id": "case0075",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case075.png",
+      "mask_tumor_filename": "case075_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0076",
+      "case_id": "case0076",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case076.png",
+      "mask_tumor_filename": "case076_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0077",
+      "case_id": "case0077",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case077.png",
+      "mask_tumor_filename": "case077_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0078",
+      "case_id": "case0078",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case078.png",
+      "mask_tumor_filename": "case078_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0079",
+      "case_id": "case0079",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case079.png",
+      "mask_tumor_filename": "case079_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0080",
+      "case_id": "case0080",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case080.png",
+      "mask_tumor_filename": "case080_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0081",
+      "case_id": "case0081",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case081.png",
+      "mask_tumor_filename": "case081_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0082",
+      "case_id": "case0082",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case082.png",
+      "mask_tumor_filename": "case082_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0083",
+      "case_id": "case0083",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case083.png",
+      "mask_tumor_filename": "case083_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0084",
+      "case_id": "case0084",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case084.png",
+      "mask_tumor_filename": "case084_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0085",
+      "case_id": "case0085",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case085.png",
+      "mask_tumor_filename": "case085_tumor.png",
+      "mask_other_filename": "case085_other1.png&case085_other2.png"
+    },
+    {
+      "sample_id": "small-dataset-0086",
+      "case_id": "case0086",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case086.png",
+      "mask_tumor_filename": "case086_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0087",
+      "case_id": "case0087",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case087.png",
+      "mask_tumor_filename": "case087_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0088",
+      "case_id": "case0088",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case088.png",
+      "mask_tumor_filename": "case088_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0089",
+      "case_id": "case0089",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case089.png",
+      "mask_tumor_filename": "case089_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0090",
+      "case_id": "case0090",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case090.png",
+      "mask_tumor_filename": "case090_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0091",
+      "case_id": "case0091",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case091.png",
+      "mask_tumor_filename": "case091_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0092",
+      "case_id": "case0092",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case092.png",
+      "mask_tumor_filename": "case092_tumor.png",
+      "mask_other_filename": "case092_other1.png"
+    },
+    {
+      "sample_id": "small-dataset-0093",
+      "case_id": "case0093",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case093.png",
+      "mask_tumor_filename": "case093_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0094",
+      "case_id": "case0094",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case094.png",
+      "mask_tumor_filename": "case094_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0095",
+      "case_id": "case0095",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case095.png",
+      "mask_tumor_filename": "case095_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0096",
+      "case_id": "case0096",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case096.png",
+      "mask_tumor_filename": "case096_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0097",
+      "case_id": "case0097",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case097.png",
+      "mask_tumor_filename": "case097_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0098",
+      "case_id": "case0098",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case098.png",
+      "mask_tumor_filename": "case098_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0099",
+      "case_id": "case0099",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case099.png",
+      "mask_tumor_filename": "case099_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0100",
+      "case_id": "case0100",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case100.png",
+      "mask_tumor_filename": "case100_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0101",
+      "case_id": "case0101",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case101.png",
+      "mask_tumor_filename": "case101_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0102",
+      "case_id": "case0102",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case102.png",
+      "mask_tumor_filename": "case102_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0103",
+      "case_id": "case0103",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case103.png",
+      "mask_tumor_filename": "case103_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0104",
+      "case_id": "case0104",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case104.png",
+      "mask_tumor_filename": "case104_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0105",
+      "case_id": "case0105",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case105.png",
+      "mask_tumor_filename": "case105_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0106",
+      "case_id": "case0106",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case106.png",
+      "mask_tumor_filename": "case106_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0107",
+      "case_id": "case0107",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case107.png",
+      "mask_tumor_filename": "case107_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0108",
+      "case_id": "case0108",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case108.png",
+      "mask_tumor_filename": "case108_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0109",
+      "case_id": "case0109",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case109.png",
+      "mask_tumor_filename": "case109_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0110",
+      "case_id": "case0110",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case110.png",
+      "mask_tumor_filename": "case110_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0111",
+      "case_id": "case0111",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case111.png",
+      "mask_tumor_filename": "case111_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0112",
+      "case_id": "case0112",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case112.png",
+      "mask_tumor_filename": "case112_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0113",
+      "case_id": "case0113",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case113.png",
+      "mask_tumor_filename": "case113_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0114",
+      "case_id": "case0114",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case114.png",
+      "mask_tumor_filename": "case114_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0115",
+      "case_id": "case0115",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case115.png",
+      "mask_tumor_filename": "case115_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0116",
+      "case_id": "case0116",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case116.png",
+      "mask_tumor_filename": "case116_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0117",
+      "case_id": "case0117",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case117.png",
+      "mask_tumor_filename": "case117_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0118",
+      "case_id": "case0118",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case118.png",
+      "mask_tumor_filename": "case118_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0119",
+      "case_id": "case0119",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case119.png",
+      "mask_tumor_filename": "case119_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0120",
+      "case_id": "case0120",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case120.png",
+      "mask_tumor_filename": "case120_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0121",
+      "case_id": "case0121",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case121.png",
+      "mask_tumor_filename": "case121_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0122",
+      "case_id": "case0122",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case122.png",
+      "mask_tumor_filename": "case122_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0123",
+      "case_id": "case0123",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case123.png",
+      "mask_tumor_filename": "case123_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0124",
+      "case_id": "case0124",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case124.png",
+      "mask_tumor_filename": "case124_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0125",
+      "case_id": "case0125",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case125.png",
+      "mask_tumor_filename": "case125_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0126",
+      "case_id": "case0126",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case126.png",
+      "mask_tumor_filename": "case126_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0127",
+      "case_id": "case0127",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case127.png",
+      "mask_tumor_filename": "case127_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0128",
+      "case_id": "case0128",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case128.png",
+      "mask_tumor_filename": "case128_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0129",
+      "case_id": "case0129",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case129.png",
+      "mask_tumor_filename": "case129_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0130",
+      "case_id": "case0130",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case130.png",
+      "mask_tumor_filename": "case130_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0131",
+      "case_id": "case0131",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case131.png",
+      "mask_tumor_filename": "case131_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0132",
+      "case_id": "case0132",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case132.png",
+      "mask_tumor_filename": "case132_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0133",
+      "case_id": "case0133",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case133.png",
+      "mask_tumor_filename": "case133_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0134",
+      "case_id": "case0134",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case134.png",
+      "mask_tumor_filename": "case134_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0135",
+      "case_id": "case0135",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case135.png",
+      "mask_tumor_filename": "case135_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0136",
+      "case_id": "case0136",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case136.png",
+      "mask_tumor_filename": "case136_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0137",
+      "case_id": "case0137",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case137.png",
+      "mask_tumor_filename": "case137_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0138",
+      "case_id": "case0138",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case138.png",
+      "mask_tumor_filename": "case138_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0139",
+      "case_id": "case0139",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case139.png",
+      "mask_tumor_filename": "case139_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0140",
+      "case_id": "case0140",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case140.png",
+      "mask_tumor_filename": "case140_tumor.png",
+      "mask_other_filename": "case140_other1.png&case140_other2.png&case140_other3.png&case140_other4.png"
+    },
+    {
+      "sample_id": "small-dataset-0141",
+      "case_id": "case0141",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case141.png",
+      "mask_tumor_filename": "case141_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0142",
+      "case_id": "case0142",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case142.png",
+      "mask_tumor_filename": "case142_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0143",
+      "case_id": "case0143",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case143.png",
+      "mask_tumor_filename": "case143_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0144",
+      "case_id": "case0144",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case144.png",
+      "mask_tumor_filename": "case144_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0145",
+      "case_id": "case0145",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case145.png",
+      "mask_tumor_filename": "case145_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0146",
+      "case_id": "case0146",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case146.png",
+      "mask_tumor_filename": "case146_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0147",
+      "case_id": "case0147",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case147.png",
+      "mask_tumor_filename": "case147_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0148",
+      "case_id": "case0148",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case148.png",
+      "mask_tumor_filename": "case148_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0149",
+      "case_id": "case0149",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case149.png",
+      "mask_tumor_filename": "case149_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0150",
+      "case_id": "case0150",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case150.png",
+      "mask_tumor_filename": "case150_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0151",
+      "case_id": "case0151",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case151.png",
+      "mask_tumor_filename": "case151_tumor.png",
+      "mask_other_filename": "case151_other1.png&case151_other2.png"
+    },
+    {
+      "sample_id": "small-dataset-0152",
+      "case_id": "case0152",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case152.png",
+      "mask_tumor_filename": "case152_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0153",
+      "case_id": "case0153",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case153.png",
+      "mask_tumor_filename": "case153_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0154",
+      "case_id": "case0154",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case154.png",
+      "mask_tumor_filename": "case154_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0155",
+      "case_id": "case0155",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case155.png",
+      "mask_tumor_filename": "case155_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0156",
+      "case_id": "case0156",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case156.png",
+      "mask_tumor_filename": "case156_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0157",
+      "case_id": "case0157",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case157.png",
+      "mask_tumor_filename": "case157_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0158",
+      "case_id": "case0158",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case158.png",
+      "mask_tumor_filename": "case158_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0159",
+      "case_id": "case0159",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case159.png",
+      "mask_tumor_filename": "case159_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0160",
+      "case_id": "case0160",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case160.png",
+      "mask_tumor_filename": "case160_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0161",
+      "case_id": "case0161",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case161.png",
+      "mask_tumor_filename": "case161_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0162",
+      "case_id": "case0162",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case162.png",
+      "mask_tumor_filename": "case162_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0163",
+      "case_id": "case0163",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case163.png",
+      "mask_tumor_filename": "case163_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0164",
+      "case_id": "case0164",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case164.png",
+      "mask_tumor_filename": "case164_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0165",
+      "case_id": "case0165",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case165.png",
+      "mask_tumor_filename": "case165_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0166",
+      "case_id": "case0166",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case166.png",
+      "mask_tumor_filename": "case166_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0167",
+      "case_id": "case0167",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case167.png",
+      "mask_tumor_filename": "case167_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0168",
+      "case_id": "case0168",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case168.png",
+      "mask_tumor_filename": "case168_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0169",
+      "case_id": "case0169",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case169.png",
+      "mask_tumor_filename": "case169_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0170",
+      "case_id": "case0170",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case170.png",
+      "mask_tumor_filename": "case170_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0171",
+      "case_id": "case0171",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case171.png",
+      "mask_tumor_filename": "case171_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0172",
+      "case_id": "case0172",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case172.png",
+      "mask_tumor_filename": "case172_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0173",
+      "case_id": "case0173",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case173.png",
+      "mask_tumor_filename": "case173_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0174",
+      "case_id": "case0174",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case174.png",
+      "mask_tumor_filename": "case174_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0175",
+      "case_id": "case0175",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case175.png",
+      "mask_tumor_filename": "case175_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0176",
+      "case_id": "case0176",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case176.png",
+      "mask_tumor_filename": "case176_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0177",
+      "case_id": "case0177",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case177.png",
+      "mask_tumor_filename": "case177_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0178",
+      "case_id": "case0178",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case178.png",
+      "mask_tumor_filename": "case178_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0179",
+      "case_id": "case0179",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case179.png",
+      "mask_tumor_filename": "case179_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0180",
+      "case_id": "case0180",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case180.png",
+      "mask_tumor_filename": "case180_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0181",
+      "case_id": "case0181",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case181.png",
+      "mask_tumor_filename": "case181_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0182",
+      "case_id": "case0182",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case182.png",
+      "mask_tumor_filename": "case182_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0183",
+      "case_id": "case0183",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case183.png",
+      "mask_tumor_filename": "case183_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0184",
+      "case_id": "case0184",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case184.png",
+      "mask_tumor_filename": "case184_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0185",
+      "case_id": "case0185",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case185.png",
+      "mask_tumor_filename": "case185_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0186",
+      "case_id": "case0186",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case186.png",
+      "mask_tumor_filename": "case186_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0187",
+      "case_id": "case0187",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case187.png",
+      "mask_tumor_filename": "case187_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0188",
+      "case_id": "case0188",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case188.png",
+      "mask_tumor_filename": "case188_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0189",
+      "case_id": "case0189",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case189.png",
+      "mask_tumor_filename": "case189_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0190",
+      "case_id": "case0190",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case190.png",
+      "mask_tumor_filename": "case190_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0191",
+      "case_id": "case0191",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case191.png",
+      "mask_tumor_filename": "case191_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0192",
+      "case_id": "case0192",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case192.png",
+      "mask_tumor_filename": "case192_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0193",
+      "case_id": "case0193",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case193.png",
+      "mask_tumor_filename": "case193_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0194",
+      "case_id": "case0194",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case194.png",
+      "mask_tumor_filename": "case194_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0195",
+      "case_id": "case0195",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case195.png",
+      "mask_tumor_filename": "case195_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0196",
+      "case_id": "case0196",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case196.png",
+      "mask_tumor_filename": "case196_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0197",
+      "case_id": "case0197",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case197.png",
+      "mask_tumor_filename": "case197_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0198",
+      "case_id": "case0198",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case198.png",
+      "mask_tumor_filename": "case198_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0199",
+      "case_id": "case0199",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case199.png",
+      "mask_tumor_filename": "case199_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0200",
+      "case_id": "case0200",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case200.png",
+      "mask_tumor_filename": "case200_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0201",
+      "case_id": "case0201",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case201.png",
+      "mask_tumor_filename": "case201_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0202",
+      "case_id": "case0202",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case202.png",
+      "mask_tumor_filename": "case202_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0203",
+      "case_id": "case0203",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case203.png",
+      "mask_tumor_filename": "case203_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0204",
+      "case_id": "case0204",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case204.png",
+      "mask_tumor_filename": "case204_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0205",
+      "case_id": "case0205",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case205.png",
+      "mask_tumor_filename": "case205_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0206",
+      "case_id": "case0206",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case206.png",
+      "mask_tumor_filename": "case206_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0207",
+      "case_id": "case0207",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case207.png",
+      "mask_tumor_filename": "case207_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0208",
+      "case_id": "case0208",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case208.png",
+      "mask_tumor_filename": "case208_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0209",
+      "case_id": "case0209",
+      "label_id": null,
+      "label": "normal",
+      "image_filename": "case209.png",
+      "mask_tumor_filename": "nan",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0210",
+      "case_id": "case0210",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case210.png",
+      "mask_tumor_filename": "case210_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0211",
+      "case_id": "case0211",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case211.png",
+      "mask_tumor_filename": "case211_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0212",
+      "case_id": "case0212",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case212.png",
+      "mask_tumor_filename": "case212_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0213",
+      "case_id": "case0213",
+      "label_id": null,
+      "label": "normal",
+      "image_filename": "case213.png",
+      "mask_tumor_filename": "nan",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0214",
+      "case_id": "case0214",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case214.png",
+      "mask_tumor_filename": "case214_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0215",
+      "case_id": "case0215",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case215.png",
+      "mask_tumor_filename": "case215_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0216",
+      "case_id": "case0216",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case216.png",
+      "mask_tumor_filename": "case216_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0217",
+      "case_id": "case0217",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case217.png",
+      "mask_tumor_filename": "case217_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0218",
+      "case_id": "case0218",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case218.png",
+      "mask_tumor_filename": "case218_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0219",
+      "case_id": "case0219",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case219.png",
+      "mask_tumor_filename": "case219_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0220",
+      "case_id": "case0220",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case220.png",
+      "mask_tumor_filename": "case220_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0221",
+      "case_id": "case0221",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case221.png",
+      "mask_tumor_filename": "case221_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0222",
+      "case_id": "case0222",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case222.png",
+      "mask_tumor_filename": "case222_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0223",
+      "case_id": "case0223",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case223.png",
+      "mask_tumor_filename": "case223_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0224",
+      "case_id": "case0224",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case224.png",
+      "mask_tumor_filename": "case224_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0225",
+      "case_id": "case0225",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case225.png",
+      "mask_tumor_filename": "case225_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0226",
+      "case_id": "case0226",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case226.png",
+      "mask_tumor_filename": "case226_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0227",
+      "case_id": "case0227",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case227.png",
+      "mask_tumor_filename": "case227_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0228",
+      "case_id": "case0228",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case228.png",
+      "mask_tumor_filename": "case228_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0229",
+      "case_id": "case0229",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case229.png",
+      "mask_tumor_filename": "case229_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0230",
+      "case_id": "case0230",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case230.png",
+      "mask_tumor_filename": "case230_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0231",
+      "case_id": "case0231",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case231.png",
+      "mask_tumor_filename": "case231_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0232",
+      "case_id": "case0232",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case232.png",
+      "mask_tumor_filename": "case232_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0233",
+      "case_id": "case0233",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case233.png",
+      "mask_tumor_filename": "case233_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0234",
+      "case_id": "case0234",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case234.png",
+      "mask_tumor_filename": "case234_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0235",
+      "case_id": "case0235",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case235.png",
+      "mask_tumor_filename": "case235_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0236",
+      "case_id": "case0236",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case236.png",
+      "mask_tumor_filename": "case236_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0237",
+      "case_id": "case0237",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case237.png",
+      "mask_tumor_filename": "case237_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0238",
+      "case_id": "case0238",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case238.png",
+      "mask_tumor_filename": "case238_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0239",
+      "case_id": "case0239",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case239.png",
+      "mask_tumor_filename": "case239_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0240",
+      "case_id": "case0240",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case240.png",
+      "mask_tumor_filename": "case240_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0241",
+      "case_id": "case0241",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case241.png",
+      "mask_tumor_filename": "case241_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0242",
+      "case_id": "case0242",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case242.png",
+      "mask_tumor_filename": "case242_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0243",
+      "case_id": "case0243",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case243.png",
+      "mask_tumor_filename": "case243_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0244",
+      "case_id": "case0244",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case244.png",
+      "mask_tumor_filename": "case244_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0245",
+      "case_id": "case0245",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case245.png",
+      "mask_tumor_filename": "case245_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0246",
+      "case_id": "case0246",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case246.png",
+      "mask_tumor_filename": "case246_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0247",
+      "case_id": "case0247",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case247.png",
+      "mask_tumor_filename": "case247_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0248",
+      "case_id": "case0248",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case248.png",
+      "mask_tumor_filename": "case248_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0249",
+      "case_id": "case0249",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case249.png",
+      "mask_tumor_filename": "case249_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0250",
+      "case_id": "case0250",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case250.png",
+      "mask_tumor_filename": "case250_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0251",
+      "case_id": "case0251",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case251.png",
+      "mask_tumor_filename": "case251_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0252",
+      "case_id": "case0252",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case252.png",
+      "mask_tumor_filename": "case252_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0253",
+      "case_id": "case0253",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case253.png",
+      "mask_tumor_filename": "case253_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0254",
+      "case_id": "case0254",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case254.png",
+      "mask_tumor_filename": "case254_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0255",
+      "case_id": "case0255",
+      "label_id": 1,
+      "label": "malignant",
+      "image_filename": "case255.png",
+      "mask_tumor_filename": "case255_tumor.png",
+      "mask_other_filename": "nan"
+    },
+    {
+      "sample_id": "small-dataset-0256",
+      "case_id": "case0256",
+      "label_id": 0,
+      "label": "benign",
+      "image_filename": "case256.png",
+      "mask_tumor_filename": "case256_tumor.png",
+      "mask_other_filename": "nan"
+    }
+  ]
+}

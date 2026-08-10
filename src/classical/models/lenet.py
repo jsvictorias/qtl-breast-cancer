@@ -32,8 +32,6 @@ class LeNet(nn.Module):
             nn.Conv2d(conv1_channels, conv2_channels, kernel_size=5),
             nn.Tanh(),
             nn.AvgPool2d(kernel_size=2, stride=2),
-            # Em imagens 32x32, a saída já é 5x5. O adaptive pooling
-            # mantém o classificador compatível com outros tamanhos.
             nn.AdaptiveAvgPool2d((5, 5)),
         )
 

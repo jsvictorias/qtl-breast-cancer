@@ -138,7 +138,7 @@ def stratified_group_split(
         by_label_groups[sample["label"]][sample["group_key"]].append(sample)
 
     for label, groups_dict in by_label_groups.items():
-        groups = list(groups_dict.items())  # [(group_key, [samples...]), ...]
+        groups = list(groups_dict.items())
         rng.shuffle(groups)
         groups.sort(key=lambda g: len(g[1]), reverse=True)
 

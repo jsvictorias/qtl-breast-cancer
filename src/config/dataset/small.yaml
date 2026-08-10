@@ -8,4 +8,4 @@ dataset:
 
 output:
   base_dir: src/output/classical/lenet/small-dataset
-  run_name: null
+  run_name: ${dataset.name}_seed${training.seed}

@@ -1,0 +1,100 @@
+cff-version: 1.2.0
+message: >-
+  If you use this code, please cite it using the metadata below, and
+  cite the three underlying datasets listed under "references" directly if
+  you reuse the data.
+type: code
+title: qtl-breast-cancer
+abstract: >-
+  Quantum Transfer Learning for Breast Cancer ultrasound classification.
+  Builds cleaned, patterned manifests over three public breast-ultrasound
+  datasets of increasing size (small, medium, big) to train and compare
+  classical and quantum-transfer CNNs across dataset scale.
+authors:
+  - family-names: Santos
+    given-names: Júlia
+    email: juliasantos7652@gmail.com
+license: MIT
+repository-code: https://github.com/jsvictorias/qtl-breast-cancer
+references:
+  - type: dataset
+    title: Dataset of breast ultrasound images
+    abbreviation: BUSI
+    authors:
+      - family-names: Al-Dhabyani
+        given-names: Walid
+      - family-names: Gomaa
+        given-names: Mohammed
+      - family-names: Khaled
+        given-names: Hussien
+      - family-names: Fahmy
+        given-names: Aly
+    journal: Data in Brief
+    volume: 28
+    year: 2020
+    month: 2
+    doi: 10.1016/j.dib.2019.104863
+    url: https://www.sciencedirect.com/science/article/pii/S2352340919312181
+    notes: >-
+      Used as the "small" dataset (data/raw/small). 780 images across
+      benign, malignant, and normal classes, with lesion segmentation masks.
+  - type: dataset
+    title: >-
+      BUS-BRA: A breast ultrasound dataset for assessing computer-aided
+      diagnosis systems
+    abbreviation: BUS-BRA
+    authors:
+      - family-names: Gómez-Flores
+        given-names: Wilfrido
+      - family-names: Gregorio-Calas
+        given-names: Maria Julia
+      - family-names: Coelho de Albuquerque Pereira
+        given-names: Wagner
+    journal: Medical Physics
+    volume: 51
+    issue: 5
+    start: 3110
+    end: 3123
+    year: 2024
+    doi: 10.1002/mp.16812
+    url: https://pubmed.ncbi.nlm.nih.gov/37937827/
+    notes: >-
+      Used as the "medium" dataset (data/raw/medium). 1,875 images from
+      1,064 patients, with BI-RADS categories, histology, and segmentation
+      masks.
+  - type: dataset
+    title: "BUSIS: A benchmark for breast ultrasound image segmentation"
+    abbreviation: BUSIS
+    authors:
+      - family-names: Zhang
+        given-names: Yingtao
+      - family-names: Xian
+        given-names: Min
+      - family-names: Cheng
+        given-names: Heng-Da
+      - family-names: Shareef
+        given-names: Bryar
+      - family-names: Ding
+        given-names: Jianrui
+      - family-names: Xu
+        given-names: Fei
+      - family-names: Huang
+        given-names: Kuan
+      - family-names: Zhang
+        given-names: Boyu
+      - family-names: Ning
+        given-names: Chunping
+      - family-names: Wang
+        given-names: Ying
+    journal: Healthcare
+    volume: 10
+    issue: 4
+    start: 729
+    year: 2022
+    doi: 10.3390/healthcare10040729
+    url: https://www.mdpi.com/2227-9032/10/4/729
+    notes: >-
+      Used as the "big" dataset (data/raw/big), specifically its
+      GDPH&SYSUCC cohort (Guangdong Provincial People's Hospital and
+      Sun Yat-sen University Cancer Center): 2,405 images, benign/malignant
+      only, with per-reader BI-RADS scores and an official 5-fold split.

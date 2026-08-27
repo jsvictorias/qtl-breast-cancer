@@ -1,0 +1,45 @@
+name: ci
+
+on:
+  push:
+    branches: [dev, homo, main]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+
+  deploy:
+    needs: lint
+    if: github.ref_name == 'homo'
+    runs-on: [self-hosted, fff004]
+    env:
+      DEPLOY_DIR: /home/julia_santos/projects/qtl-breast-cancer
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync workdir
+        run: |
+          mkdir -p "$DEPLOY_DIR"
+          rsync -a --delete \
+            --exclude '.git/' \
+            --exclude 'data/' \
+            --exclude 'outputs/' \
+            --exclude 'multirun/' \
+            --exclude '.venv/' \
+            --exclude '.env*' \
+            ./ "$DEPLOY_DIR/"
+
+      - name: Enviroment
+        working-directory: ${{ env.DEPLOY_DIR }}
+        run: uv sync --frozen
+
+      - run: echo "$DEPLOY_DIR" >> $GITHUB_STEP_SUMMARY

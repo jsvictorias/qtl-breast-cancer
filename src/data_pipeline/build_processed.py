@@ -5,6 +5,9 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+import imagehash
+from PIL import Image
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 CLASS_TO_INDEX = {"benign": 0, "malignant": 1}
@@ -77,6 +80,45 @@ def dedupe_by_image_content(
     return kept, report
 
 
+def dedupe_by_perceptual_hash(
+    samples: list[dict[str, Any]], project_root: Path
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for sample in samples:
+        with Image.open(project_root / sample["image_path"]) as image:
+            phash = str(imagehash.phash(image))
+        groups[phash].append(sample)
+
+    kept: list[dict[str, Any]] = []
+    conflicting_label_dropped: list[str] = []
+    duplicate_dropped: list[str] = []
+    conflicting_groups = 0
+    collapsed_groups = 0
+
+    for group in groups.values():
+        if len(group) == 1:
+            kept.append(group[0])
+            continue
+
+        if len({sample["label"] for sample in group}) > 1:
+            conflicting_groups += 1
+            conflicting_label_dropped.extend(sample["sample_id"] for sample in group)
+            continue
+
+        collapsed_groups += 1
+        group_sorted = sorted(group, key=lambda sample: sample["sample_id"])
+        kept.append(group_sorted[0])
+        duplicate_dropped.extend(sample["sample_id"] for sample in group_sorted[1:])
+
+    report = {
+        "conflicting_label_groups_dropped": conflicting_groups,
+        "conflicting_label_samples_dropped": sorted(conflicting_label_dropped),
+        "perceptual_duplicate_groups_collapsed": collapsed_groups,
+        "perceptual_duplicates_dropped": sorted(duplicate_dropped),
+    }
+    return kept, report
+
+
 def stratified_group_split(
     samples: list[dict[str, Any]], ratios: dict[str, float], seed: int
 ) -> None:
@@ -112,6 +154,25 @@ def build_processed_manifest(
         samples.extend(_normalize_samples(_load_manifest(path)))
 
     samples, dedup_report = dedupe_by_image_content(samples, PROJECT_ROOT)
+    print(
+        f"[dedup:content] dropped {len(dedup_report['same_label_duplicates_dropped'])} "
+        f"exact byte-for-byte duplicate(s) across "
+        f"{dedup_report['same_label_duplicate_groups_collapsed']} group(s); "
+        f"dropped {len(dedup_report['conflicting_label_samples_dropped'])} "
+        f"sample(s) with conflicting labels across "
+        f"{dedup_report['conflicting_label_groups_dropped']} group(s)."
+    )
+
+    samples, perceptual_dedup_report = dedupe_by_perceptual_hash(samples, PROJECT_ROOT)
+    print(
+        f"[dedup:perceptual] dropped "
+        f"{len(perceptual_dedup_report['perceptual_duplicates_dropped'])} "
+        f"visually-duplicate sample(s) across "
+        f"{perceptual_dedup_report['perceptual_duplicate_groups_collapsed']} group(s); "
+        f"dropped {len(perceptual_dedup_report['conflicting_label_samples_dropped'])} "
+        f"sample(s) with conflicting labels across "
+        f"{perceptual_dedup_report['conflicting_label_groups_dropped']} group(s)."
+    )
 
     stratified_group_split(samples, SPLIT_RATIOS, SPLIT_SEED)
 
@@ -128,6 +189,7 @@ def build_processed_manifest(
             f"ratios={SPLIT_RATIOS}."
         ),
         "content_dedup": dedup_report,
+        "perceptual_dedup": perceptual_dedup_report,
         "total_samples": len(samples),
         "dataset_counts": dict(Counter(sample["dataset"] for sample in samples)),
         "label_counts": dict(Counter(sample["label"] for sample in samples)),

@@ -7,6 +7,7 @@ authors = [{ name = "Júlia Santos", email = "juliasantos7652@gmail.com" }]
 requires-python = ">=3.13"
 dependencies = [
     "dotenv>=0.9.9",
+    "imagehash>=4.3.2",
     "matplotlib>=3.10.9",
     "numpy>=2.4.6",
     "openpyxl>=3.1.5",
@@ -37,6 +38,10 @@ dev = [
     "pytest>=9.0.3",
     "ruff>=0.15.15",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: exercises the full image set (perceptual hash, path checks)"]
 
 [tool.ruff]
 line-length = 88

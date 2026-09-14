@@ -41,11 +41,16 @@ dev = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 markers = ["slow: exercises the full image set (perceptual hash, path checks)"]
 
 [tool.ruff]
 line-length = 88
 target-version = "py313"
+# Notebooks are exploratory reports (reports/eda/*.ipynb), not library code -
+# narrative print()/plot cells routinely exceed the 88-col limit that makes
+# sense for src/tests, so they are out of scope for lint/format.
+extend-exclude = ["*.ipynb"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "N", "UP"]

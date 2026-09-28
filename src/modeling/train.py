@@ -19,7 +19,7 @@ def main(cfg: DictConfig) -> None:
     print(f"batch x={tuple(x.shape)} y={tuple(y.shape)}")
     for d, dl in tests.items():
         xb, _ = next(iter(dl))
-        print(f"test[{d}] n={len(dl.dataset)} batch_mean={xb.mean():.3f}")
+        print(f"test[{d}] n={len(dl.dataset)} batch_mean={xb.mean():.3f}")  # type: ignore
 
 
 if __name__ == "__main__":

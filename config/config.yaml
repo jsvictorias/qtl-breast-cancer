@@ -13,6 +13,10 @@ data:
   num_workers: 2
 
 hydra:
+  sweeper:
+    params:
+      dataset: small,medium,big
+      seed: 0,1,2,3,4
   run:
     dir: outputs/src_${dataset.name}/seed${seed}/${now:%Y-%m-%d_%H-%M-%S}
   sweep:

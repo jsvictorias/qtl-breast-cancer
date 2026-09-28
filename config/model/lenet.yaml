@@ -1,3 +1,3 @@
-name: lenet
+_target_: src.modeling.lenet.LeNet5
 in_channels: 1
 input_size: ${data.image_size}

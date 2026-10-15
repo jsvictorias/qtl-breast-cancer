@@ -1,0 +1,17 @@
+{
+  "source": "big",
+  "seed": 6,
+  "best_val_auc": 0.8505668934240362,
+  "val_auc_median_rule": "lower median of best_val_auc over seeds",
+  "n_seeds": 20,
+  "val_auc_min_max": [
+    0.8256613756613758,
+    0.8835978835978837
+  ],
+  "norm": {
+    "mean": 0.3158385082651417,
+    "std": 0.14770514061734052
+  },
+  "commit": "03ef0fadb239fb0442b6a3791b8d8063596e14a3",
+  "src_run_dir": "multirun\\cnn_test2\\src_big\\seed6"
+}

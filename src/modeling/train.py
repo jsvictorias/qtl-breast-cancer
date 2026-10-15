@@ -19,7 +19,8 @@ from src.modeling.utils import compute_pos_weight, git_info, set_seed
 def main(cfg: DictConfig) -> None:
     set_seed(cfg.seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    train_dl, val_dl, test_dls, (mean, std) = build_loaders(cfg)
+
+    train_dl, val_dl, test_dls, (mean, std), val_dls = build_loaders(cfg)
 
     model = instantiate(cfg.model).to(device)
     pos_weight = compute_pos_weight(train_dl.dataset).to(device)
@@ -52,12 +53,23 @@ def main(cfg: DictConfig) -> None:
         "best_val_auc": best_auc,
         "norm": {"mean": mean, "std": std},
         "pos_weight": pos_weight.item(),
+        "train_fraction": cfg.train.get("train_fraction", 1.0),
+        "n_train": len(train_dl.dataset),  # type: ignore
         "targets": {},
+        "val_targets": {},
     }
+
     for domain, dl in test_dls.items():
         probs, labels = predict(model, dl, device)
         results["targets"][domain] = compute_metrics(probs, labels, cfg.train.threshold)
         np.savez(out / f"preds_{domain}.npz", probs=probs, labels=labels)
+
+    for domain, dl in val_dls.items():
+        probs, labels = predict(model, dl, device)
+        results["val_targets"][domain] = compute_metrics(
+            probs, labels, cfg.train.threshold
+        )
+        np.savez(out / f"preds_val_{domain}.npz", probs=probs, labels=labels)
 
     torch.save(best_state, out / "model.pt")
     (out / "metrics.json").write_text(json.dumps(results, indent=2))

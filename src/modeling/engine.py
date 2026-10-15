@@ -2,6 +2,7 @@ import torch
 from sklearn.metrics import (
     accuracy_score,
     average_precision_score,
+    balanced_accuracy_score,
     f1_score,
     recall_score,
     roc_auc_score,
@@ -35,6 +36,7 @@ def compute_metrics(probs, labels, threshold=0.5):
     preds = (probs >= threshold).astype(int)
     return {
         "acc": float(accuracy_score(labels, preds)),
+        "balanced_acc": float(balanced_accuracy_score(labels, preds)),
         "macro_f1": float(f1_score(labels, preds, average="macro")),
         "recall_malignant": float(recall_score(labels, preds, pos_label=1)),
         "roc_auc": float(roc_auc_score(labels, probs)),

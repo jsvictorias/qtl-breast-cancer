@@ -5,16 +5,6 @@ from torchvision.transforms import v2
 from src.data_pipeline.ultrasound_dataset import UltrasoundDataset
 
 
-def base_transform(size):
-    return v2.Compose(
-        [
-            v2.Resize((size, size)),
-            v2.ToImage(),
-            v2.ToDtype(torch.float32, scale=True),
-        ]
-    )
-
-
 def compute_mean_std(dataset, batch_size=64):
     loader = DataLoader(dataset, batch_size=batch_size)
     s, s2, n = 0.0, 0.0, 0
@@ -27,17 +17,12 @@ def compute_mean_std(dataset, batch_size=64):
 
 
 def build_loaders(cfg):
-    size, mp = cfg.data.image_size, cfg.data.manifest_path
+    images_path = cfg.data.images_path
+    meta_path = cfg.data.meta_path
     src = cfg.dataset.name
 
-    stats_ds = UltrasoundDataset(mp, src, "train", base_transform(size))
-    mean, std = compute_mean_std(stats_ds)
-
-    tf = v2.Compose([base_transform(size), v2.Normalize([mean], [std])])
-    g = torch.Generator().manual_seed(cfg.seed)
-
     def make(domain, split, shuffle=False):
-        ds = UltrasoundDataset(mp, domain, split, tf)
+        ds = UltrasoundDataset(images_path, meta_path, domain, split, tf)
         return DataLoader(
             ds,
             batch_size=cfg.train.batch_size,
@@ -46,7 +31,18 @@ def build_loaders(cfg):
             generator=g,
         )
 
+    fraction = cfg.train.get("train_fraction", 1.0)
+    stats_ds = UltrasoundDataset(images_path, meta_path, src, "train")
+    stats_ds.subsample(fraction, cfg.seed)
+    mean, std = compute_mean_std(stats_ds)
+
+    tf = v2.Normalize([mean], [std])
+    g = torch.Generator().manual_seed(cfg.seed)
+
     train = make(src, "train", shuffle=True)
+    train.dataset.subsample(fraction, cfg.seed)  # type: ignore
     val = make(src, "val")
     tests = {d: make(d, "test") for d in cfg.eval_domains}
-    return train, val, tests, (mean, std)
+    vals = {d: make(d, "val") for d in cfg.eval_domains}
+
+    return train, val, tests, (mean, std), vals

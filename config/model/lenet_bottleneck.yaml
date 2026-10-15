@@ -1,0 +1,5 @@
+_target_: src.modeling.lenet.LeNetBottleneck
+in_channels: 1
+input_size: ${data.image_size}
+k: 8
+hidden: 4

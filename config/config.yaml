@@ -8,9 +8,10 @@ seed: 0
 eval_domains: [small, medium, big]
 
 data:
-  manifest_path: data/processed/manifest.json
+  images_path: data/processed/normalized_64.npz
+  meta_path: data/processed/normalized_64_meta.csv
   image_size: 64
-  num_workers: 2
+  num_workers: 0
 
 hydra:
   sweeper:

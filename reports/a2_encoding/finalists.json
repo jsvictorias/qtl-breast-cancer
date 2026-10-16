@@ -1,0 +1,30 @@
+[
+  {
+    "point": "penultimate/angle/k4",
+    "layer": "penultimate",
+    "k": 4,
+    "encoder": "angle",
+    "config": {
+      "n_qubits": 4
+    },
+    "reader": "kernel",
+    "val_auc": 0.8204304881176198,
+    "depth": 1,
+    "cx": 0,
+    "qubits": 4
+  },
+  {
+    "point": "penultimate/angle/k8",
+    "layer": "penultimate",
+    "k": 8,
+    "encoder": "angle",
+    "config": {
+      "n_qubits": 8
+    },
+    "reader": "measure",
+    "val_auc": 0.8188238128677541,
+    "depth": 1,
+    "cx": 0,
+    "qubits": 8
+  }
+]

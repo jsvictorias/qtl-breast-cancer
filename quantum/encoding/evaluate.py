@@ -104,16 +104,23 @@ def logistic_reader(feats: dict, y: dict, source: str, meta: dict) -> list[dict]
     return evaluate_reader(fit, [{"C": c} for c in C_LOGISTIC], y, source, meta)
 
 
-def evaluate_config(name: str, cfg: dict, source: str) -> list[dict]:
+def evaluate_config(
+    name: str,
+    cfg: dict,
+    source: str,
+    layer: str = data.LAYER,
+    k: int | None = None,
+) -> list[dict]:
     spec = ENCODERS[name]
     x, y = {}, {}
     for d in DOMAINS:
         for s in ("train", "val", "test"):
-            x[(d, s)], y[(d, s)] = load_inputs(name, source, d, s)
+            x[(d, s)], y[(d, s)] = load_inputs(name, source, d, s, layer, k)
     psi = {key: states(name, v, **cfg) for key, v in x.items()}
     meta = {
-        "layer": data.LAYER,
-        "k": spec.k or 84,
+        "layer": layer,
+        "k": (k or spec.k) or 84,
+        "n_qubits": cfg.get("n_qubits", 8),
         "encoder": label(name, cfg),
     }
     rows = kernel_reader(psi, y, source, meta | {"reader": "kernel"})

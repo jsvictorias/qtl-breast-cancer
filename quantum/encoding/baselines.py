@@ -21,26 +21,35 @@ from quantum.quantum_prep.extract import DOMAINS, FINAL, SPLITS
 from src.modeling.lenet import LeNet5
 
 GAMMA_MULT = (0.1, 1.0, 10.0)
-HEAD_DIR = Path("multirun/frozen_head_penultimate_k8_h4")
+
+
+def head_dir(layer: str) -> Path:
+    return Path(f"multirun/frozen_head_{layer}_k8_h4")
+
+
 CNN_SUMMARY = Path("reports/cnn_2/summary_source_target.csv")
 INPUTS = ("pc8", "pc16", "amp84")
 
 
-def load_input(kind: str, source: str, domain: str, split: str):
+def load_input(
+    kind: str, source: str, domain: str, split: str, layer: str = data.LAYER
+):
     if kind == "amp84":
         a = data.load_amplitudes(source, domain, split)
         return a.V[:, : a.n_features], a.y
-    a = data.load_angles(source, domain, split, int(kind[2:]))
+    a = data.load_angles(source, domain, split, int(kind[2:]), layer)
     return a.X, a.y
 
 
-def input_reader(kind: str, source: str, reader: str) -> list[dict]:
+def input_reader(
+    kind: str, source: str, reader: str, layer: str = data.LAYER
+) -> list[dict]:
     x, y = {}, {}
     for d in DOMAINS:
         for s in SPLITS:
-            x[(d, s)], y[(d, s)] = load_input(kind, source, d, s)
+            x[(d, s)], y[(d, s)] = load_input(kind, source, d, s, layer)
     train, ytr = x[(source, "train")], y[(source, "train")]
-    meta = {"layer": data.LAYER, "k": train.shape[1], "encoder": kind}
+    meta = {"layer": layer, "k": train.shape[1], "encoder": kind}
     meta |= {"reader": reader, "ci_kind": "bootstrap_test"}
     if reader == "logreg":
         scaler = StandardScaler().fit(train)
@@ -64,13 +73,13 @@ def input_reader(kind: str, source: str, reader: str) -> list[dict]:
     return evaluate_reader(fit, grid, y, source, meta)
 
 
-def head_rows(source: str) -> list[dict]:
+def head_rows(source: str, layer: str = data.LAYER) -> list[dict]:
     runs = [
         json.loads(p.read_text())
-        for p in sorted((HEAD_DIR / f"src_{source}").glob("seed*/metrics.json"))
+        for p in sorted((head_dir(layer) / f"src_{source}").glob("seed*/metrics.json"))
     ]
     best = max(runs, key=lambda r: r["best_val_auc"])
-    base = {"layer": data.LAYER, "k": 8, "encoder": "pc8", "source": source}
+    base = {"layer": layer, "k": 8, "encoder": "pc8", "source": source}
     rows = []
     for target in DOMAINS:
         auc = np.array([r["targets"][target]["roc_auc"] for r in runs])

@@ -1,0 +1,13 @@
+{
+  "source": "small",
+  "layer": "feature_maps",
+  "n_components": 16,
+  "n_features_in": 2704,
+  "explained_variance_ratio_sum": 0.42573338747024536,
+  "linear_probe_test_auc": {
+    "small": 0.7086197778952935,
+    "medium": 0.6797570850202429,
+    "big": 0.7114890400604686
+  },
+  "model_seed": 9
+}

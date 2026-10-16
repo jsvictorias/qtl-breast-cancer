@@ -67,8 +67,15 @@ def single_qubit_entropy(psi: np.ndarray) -> np.ndarray:
     return out
 
 
-def properties(name: str, cfg: dict, source: str, domain: str) -> dict:
-    x, y = load_inputs(name, source, domain, SPLIT)
+def properties(
+    name: str,
+    cfg: dict,
+    source: str,
+    domain: str,
+    layer: str = data.LAYER,
+    k: int | None = None,
+) -> dict:
+    x, y = load_inputs(name, source, domain, SPLIT, layer, k)
     psi = states(name, x, **cfg)
     gram = kernel(psi)
     off = ~np.eye(len(y), dtype=bool)
@@ -78,9 +85,11 @@ def properties(name: str, cfg: dict, source: str, domain: str) -> dict:
     spec = ENCODERS[name]
     sat = np.nan
     if spec.input_kind == "angles":
-        a = data.load_angles(source, domain, SPLIT, spec.k)  # type: ignore
+        a = data.load_angles(source, domain, SPLIT, k or spec.k, layer)  # type: ignore
         sat = float(a.below.mean() + a.above.mean())
     return {
+        "layer": layer,
+        "k": (k or spec.k) or 84,
         "encoder": label(name, cfg),
         "source": source,
         "domain": domain,

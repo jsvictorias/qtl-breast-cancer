@@ -2,9 +2,16 @@ from functools import cache
 from itertools import combinations
 
 import numpy as np
+from qiskit import transpile
+from qiskit_aer import AerSimulator
 from qiskit_aer.noise import NoiseModel
 
-from quantum.encoding.backends import N_QUBITS, noisy_counts, noisy_density_matrix
+from quantum.encoding.backends import (
+    BASIS,
+    N_QUBITS,
+    noisy_counts,
+    noisy_density_matrix,
+)
 from quantum.encoding.encoders import _pairs, build_circuit, n_features
 
 
@@ -118,4 +125,34 @@ def noisy_probabilities(
         else:
             for bits, c in noisy_counts(qc, noise_model, shots, seed + i).items():
                 p[i, int(bits, 2)] = c / shots
+    return p
+
+
+def noisy_probabilities_batch(
+    name: str,
+    x_batch: np.ndarray,
+    noise_model: NoiseModel,
+    shots: int = 1024,
+    seed: int = 0,
+    chunk: int = 250,
+    **cfg,
+) -> np.ndarray:
+    """Sampled outcome probabilities under noise; circuits are run in batches."""
+    n = cfg.get("n_qubits", N_QUBITS)
+    x_batch = np.atleast_2d(x_batch)
+    sim = AerSimulator(noise_model=noise_model, seed_simulator=seed)
+    p = np.zeros((len(x_batch), 2**n))
+    for start in range(0, len(x_batch), chunk):
+        circuits = []
+        for x in x_batch[start : start + chunk]:
+            qc = build_circuit(name, x, **cfg)
+            qc.measure_all()
+            circuits.append(qc)
+        circuits = transpile(
+            circuits, basis_gates=BASIS, optimization_level=0, seed_transpiler=0
+        )
+        result = sim.run(circuits, shots=shots).result()
+        for i in range(len(circuits)):
+            for bits, c in result.get_counts(i).items():
+                p[start + i, int(bits, 2)] = c / shots
     return p

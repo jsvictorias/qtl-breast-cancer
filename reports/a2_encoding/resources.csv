@@ -1,0 +1,6 @@
+encoder,config,qubits,features,depth,size,cx,one_qubit,label
+angle,,8,8,1,8,0,8,angle
+dense,,8,16,2,16,0,16,dense
+zz,"entanglement=linear,reps=1",8,8,23,37,14,23,zz_r1_linear
+zz,"entanglement=circular,reps=2",8,8,52,80,32,48,zz_r2_circular
+amplitude,,8,256,1487,1522,247,1275,amplitude

@@ -15,6 +15,7 @@ dependencies = [
     "pandas>=3.0.3",
     "pillow>=12.2.0",
     "pre-commit>=4.6.0",
+    "pylatexenc>=2.11",
     "python-dotenv>=1.2.2",
     "pyyaml>=6.0.3",
     "qiskit>=2.5.2",
